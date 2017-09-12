@@ -6,6 +6,8 @@ Graser, A., Schmidt, J., Roth, F., & Brändle, N. (under review) Untangling Orig
 
 ## Examples
 
+Raw origin-destination flows on the left and edge bundling results on the right:
+
 <img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/raw_gulls.png" width="40%"><img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/edge_bundling_gulls.png" width="40%">
 
 <img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/raw_us_migration.png" width="40%"><img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/edge_bundling_us_migration.png" width="40%">
