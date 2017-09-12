@@ -6,23 +6,11 @@ Graser, A., Schmidt, J., Roth, F., & Brändle, N. (under review) Untangling Orig
 
 ## Examples
 
-<div style="float:left">
-<img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/raw_gulls.png" width="40%"></div>
-<div style="float:left">
-<img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/edge_bundling_gulls.png" width="40%"></div>
+<img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/raw_gulls.png" width="40%"><img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/edge_bundling_gulls.png" width="40%">
 
-<div style="float:left">
-<img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/raw_us_migration.png" width="40%"></div>
-<div style="float:left">
-<img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/edge_bundling_us_migration.png" width="40%"></div>
+<img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/raw_us_migration.png" width="40%"><img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/edge_bundling_us_migration.png" width="40%">
 
-<div style="float:left">
-<img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/raw_vienna.png" width="40%"></div>
-<div style="float:left">
-<img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/edge_bundling_vienna.png" width="40%"></div>
+<img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/raw_vienna.png" width="40%"><img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/edge_bundling_vienna.png" width="40%">
 
-<div style="float:left">
-<img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/raw_flights.png" width="40%"></div>
-<div style="float:left">
-<img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/edge_bundling_flights.png" width="40%"></div>
+<img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/raw_flights.png" width="40%"><img src="https://raw.githubusercontent.com/dts-ait/qgis-edge-bundling/master/images/edge_bundling_flights.png" width="40%">
 
