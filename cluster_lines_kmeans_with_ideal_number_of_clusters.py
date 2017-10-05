@@ -30,26 +30,9 @@ for edge in processing.features(layer):
     geom = edge.geometry()
     azimuth = geom.vertexAt(0).azimuth(geom.vertexAt(1))/4
     
-    # mix start and end points
     X.append([geom.vertexAt(0).x(),geom.vertexAt(0).y()])
     X.append([geom.vertexAt(1).x(),geom.vertexAt(1).y()])
     
-    
-    # start and end point x/y
-    # X.append([geom.vertexAt(0).x(),geom.vertexAt(0).y(),
-    #               geom.vertexAt(1).x(),geom.vertexAt(1).y()])
-    #
-    # with azimuth               
-    #X.append([geom.vertexAt(0).x(),geom.vertexAt(0).y(),azimuth])    
-    #X.append([geom.centroid().asPoint().x(),
-    #                  geom.centroid().asPoint().y(),
-    #                  geom.length(),
-    #                  azimuth])
-#print X
-
-
-
-
 clusters = 2 # initial number of clusters
 mean = target_cluster_size * target_cluster_size * 100 # make sure it's big enough
 labels=[]
@@ -91,7 +74,7 @@ while sqrt(mean) > target_cluster_size:
         labels.append(pair_line_label)
     
     # Score cluster quality
-    # first approach: size of convex hull of start points or end points per cluster, respectively 
+    # size of convex hull of start points or end points per cluster, respectively 
     start_points = []
     end_points = []
     for l in range(0,max(labels)+1):
@@ -117,9 +100,6 @@ while sqrt(mean) > target_cluster_size:
         clusters += 2 
     else:
         clusters += 1
-    
-
-
 
 
 # Determine number of edges per cluster 
@@ -130,10 +110,6 @@ for l in range(0,max(labels)+1):
 for label in labels:
     if label >= 0:
         cluster_sizes[label] = cluster_sizes[label]+1
-
-#print labels
-#print max(labels)
-#print max(cluster_sizes)
 
 
 # Create output 
@@ -152,9 +128,6 @@ for i,inFeat in enumerate(processing.features(layer)):
     writer.addFeature(outFeat)
 
 del writer
-
-
-
 
 
 t_end = datetime.now()
