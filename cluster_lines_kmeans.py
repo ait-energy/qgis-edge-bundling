@@ -30,22 +30,9 @@ for edge in processing.features(layer):
     geom = edge.geometry()
     azimuth = geom.vertexAt(0).azimuth(geom.vertexAt(1))/4
     
-    # mix start and end points
     X.append([geom.vertexAt(0).x(),geom.vertexAt(0).y()])
     X.append([geom.vertexAt(1).x(),geom.vertexAt(1).y()])
     
-    
-    # start and end point x/y
-    # X.append([geom.vertexAt(0).x(),geom.vertexAt(0).y(),
-    #               geom.vertexAt(1).x(),geom.vertexAt(1).y()])
-    #
-    # with azimuth               
-    #X.append([geom.vertexAt(0).x(),geom.vertexAt(0).y(),azimuth])    
-    #X.append([geom.centroid().asPoint().x(),
-    #                  geom.centroid().asPoint().y(),
-    #                  geom.length(),
-    #                  azimuth])
-#print X
 
 db = KMeans(n_clusters=edge_point_clusters).fit(X)
 pt_labels = list(db.labels_)
@@ -85,10 +72,6 @@ for label in labels:
     if label >= 0:
         cluster_sizes[label] = cluster_sizes[label]+1
 
-#print labels
-#print max(labels)
-#print max(cluster_sizes)
-
 
 # Create output 
 outFeat = QgsFeature()
@@ -109,7 +92,7 @@ del writer
 
 
 # Score cluster quality
-# first approach: size of convex hull of start points or end points per cluster, respectively 
+# size of convex hull of start points or end points per cluster, respectively 
 start_points = []
 end_points = []
 for l in range(0,max(labels)+1):
