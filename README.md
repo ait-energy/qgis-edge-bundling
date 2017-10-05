@@ -2,7 +2,7 @@
 
 Implementation of force-directed edge bundling for the QGIS Processing toolbox as described in 
 
-Graser, A., Schmidt, J., Roth, F., & Brändle, N. (accepted) Untangling Origin-Destination Flows in Geographic Information Systems. Submitted to the Information Visualization - Special Issue on Visual Movement Analytics.
+Graser, A., Schmidt, J., Roth, F., & Brändle, N. (accepted) Untangling Origin-Destination Flows in Geographic Information Systems. Information Visualization - Special Issue on Visual Movement Analytics.
 
 ## Examples
 
