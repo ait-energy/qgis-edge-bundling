@@ -6,10 +6,10 @@ Graser, A., Schmidt, J., Roth, F., & Brändle, N. (accepted) Untangling Origin-D
 
 ## Installation
 
-Copy the files to your Processing scripts folder. By default, it is located in your user home, e.g. <pre> C:\Users<name>.qgis2\processing\scripts</pre>
+Copy the files to your Processing scripts folder. By default, it is located in your user home, e.g. <pre> C:\Users\name\\.qgis2\processing\scripts</pre>
  
 If you get the error "No module named sklearn.cluster See log for more details", you need to install scikit-learn: 
-On Windows, you will need osgeo4w. In the osgeo4w, shell run:
+On Windows, you need to install QGIS using the OSGeo4W installer. In the OSGeo4W, shell run:
 
 <pre>pip install -U scikit-learn</pre>
 
