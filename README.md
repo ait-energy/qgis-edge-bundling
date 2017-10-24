@@ -2,6 +2,10 @@
 
 Implementation of force-directed edge bundling for the QGIS Processing toolbox as described in 
 
+https://anitagraser.com/2017/10/08/movement-data-in-gis-8-edge-bundling-for-flow-maps/
+
+and
+
 Graser, A., Schmidt, J., Roth, F., & Brändle, N. (accepted) Untangling Origin-Destination Flows in Geographic Information Systems. Information Visualization - Special Issue on Visual Movement Analytics.
 
 ## Installation
