@@ -88,7 +88,24 @@ class EdgeCluster():
             self.edge_lengths.append( edges_as_vect[e_idx].length() )
             
         """ Compute compatibility: """
-        
+	""" Check that length > 0: """
+            if edges_as_vect[e_idx].length() == 0:
+                print 'Line with length 0 found, please pre-process the data first'
+                break
+            
+	""" Check that number of vertices <= 2: """
+            n   = 1
+            ver = geom.vertexAt(0)
+            points=[]
+
+            while(ver != QgsPoint(0,0)):
+                n +=1
+                points.append(ver)
+                ver=geom.vertexAt(n)
+
+            if n > 2:
+                print 'Line has more than 2 vertices, please pre-process the data first'
+                break
         """Compatibility is stored in a matrix (rows = edges, columns = edges). Every coordinate in the matrix tells whether the two edges (r,c)/(c,r) are compatible, or not.
         The diagonal is always zero, and the other fields are filled with either -1 (not compatible) or 1 (compatible). The matrix is symmetric. """
         
