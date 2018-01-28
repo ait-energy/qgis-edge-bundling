@@ -1,0 +1,20 @@
+[general]
+name=Edge bundling for Processing
+description=Bundle edges for flow maps
+about=Force-directed edge bundling implementation for QGIS Processing
+category=Plugins
+version=1.0
+qgisMinimumVersion=3.0
+
+icon=icons/prepair.png
+tags=edge bundling, flow maps,
+
+author=Anita Graser
+email=anitagraser@gmx.at
+
+homepage=https://github.com/dts-ait/qgis-edge-bundling
+tracker=https://github.com/dts-ait/qgis-edge-bundling/issues
+repository=https://github.com/dts-ait/qgis-edge-bundling
+
+experimental=True
+deprecated=False

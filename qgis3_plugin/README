@@ -1,0 +1,5 @@
+Edge bundling for Processing
+----------------------------
+This plugin implements force-based edge bundling for the QGIS Processing framework.
+Requires QGIS >= 3.0
+
