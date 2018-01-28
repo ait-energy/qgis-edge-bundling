@@ -157,7 +157,7 @@ class Edgebundling(QgsProcessingAlgorithm):
         (sink, dest_id) = self.parameterAsSink(parameters, self.OUTPUT, context,
                                                source.fields(), source.wkbType(), source.sourceCrs())
 
-        features = source.getFeatures(QgsFeatureRequest(), QgsProcessingFeatureSource.FlagSkipGeometryValidityChecks)
+        features = source.getFeatures(QgsFeatureRequest())
         total = 100.0 / source.featureCount() if source.featureCount() else 0
 
         # Parameter
@@ -167,6 +167,8 @@ class Edgebundling(QgsProcessingAlgorithm):
         # Create edge list
         edges = []
         for current, feat in enumerate(features):
+            if feedback.isCanceled():
+                break
             edges.append(feat)
 
         # Create clusters
@@ -176,7 +178,7 @@ class Edgebundling(QgsProcessingAlgorithm):
             labels = []
             for edge in edges:
                 labels.append(edge[cluster_field])
-            print(labels)
+            feedback.pushDebugInfo(labels)
             for l in range(0, max(labels) + 1):
                 clusters.append(list())
             for i, label in enumerate(labels):
@@ -198,6 +200,8 @@ class Edgebundling(QgsProcessingAlgorithm):
 
         # Do edge-bundling (separately for all clusters)
         for c, cl in enumerate(clusters):
+            if feedback.isCanceled():
+                break
             if cl.E > 1:
                 cl.force_directed_eb()
                 feedback.setProgress(10 + 80 * (c / len(clusters)))
