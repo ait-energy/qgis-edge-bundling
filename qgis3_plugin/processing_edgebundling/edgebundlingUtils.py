@@ -178,11 +178,12 @@ class EdgeCluster():
                     self.direction_matrix[j, i] = 1
 
 
-    def force_directed_eb(self):
+    def force_directed_eb(self, feedback):
         """ Force-directed edge bundling """
-
+        if feedback.isCanceled(): return
         # Create compatibility matrix
         self.compute_compatibilty_matrix()
+        if feedback.isCanceled(): return
 
         for e_idx, edge in enumerate(self.edges):
             vertices = edge.geometry().asPolyline()
@@ -194,6 +195,7 @@ class EdgeCluster():
         # For each cycle
         for c in range(self.cycles):
             #print 'Cycle {0}'.format(c)
+            if feedback.isCanceled(): break
             # New number of subdivision points
             current_num = self.EP
             currentindeces = []

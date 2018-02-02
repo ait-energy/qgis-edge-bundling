@@ -26,20 +26,16 @@ __copyright__ = '(C) 2018, Anita Graser'
 __revision__ = '$Format:%H$'
 
 import os
-from collections import OrderedDict
 
 from qgis.PyQt.QtCore import QCoreApplication, QVariant
 from qgis.PyQt.QtGui import QIcon
 
 from qgis.core import (QgsField,
                        QgsFeature,
-                       QgsGeometry,
                        QgsFeatureSink,
                        QgsFeatureRequest,
                        QgsProcessing,
-                       QgsProcessingUtils,
                        QgsProcessingAlgorithm,
-                       QgsProcessingFeatureSource,
                        QgsProcessingParameterFeatureSource,
                        QgsProcessingParameterField,
                        QgsProcessingParameterNumber,
@@ -192,30 +188,26 @@ class Edgebundling(QgsProcessingAlgorithm):
         else:
             # If clustering should not be used, create only one big cluster containing all edges
             cluster_field = QgsField('CLUSTER', QVariant.Int)
-            clustern_field = QgsField('CLUSTER_N', QVariant.Int)
+            cluster_n_field = QgsField('CLUSTER_N', QVariant.Int)
             fields.append(cluster_field)
-            fields.append(clustern_field)
+            fields.append(cluster_n_field)
             clusters = [EdgeCluster(edges, initial_step_size, iterations,
                                     cycles, compatibility)]
 
         # Do edge-bundling (separately for all clusters)
         for c, cl in enumerate(clusters):
-            if feedback.isCanceled():
-                break
+            feedback.setProgress(80 * ( 1.0 * c / len(clusters)))
+            if feedback.isCanceled(): break
             if cl.E > 1:
-                cl.force_directed_eb()
-                feedback.setProgress(10 + 80 * (c / len(clusters)))
-
+                cl.force_directed_eb(feedback)
         feedback.setProgress(90)
 
         for cl in clusters:
-            if feedback.isCanceled():
-                break
-
+            if feedback.isCanceled(): break
             for e, edge in enumerate(cl.edges):
                 feat = QgsFeature()
                 feat.setGeometry(edge.geometry())
-                if use_clustering == False:
+                if not use_clustering:
                     attr = edge.attributes()
                     attr.append(1)
                     attr.append(len(edges))
