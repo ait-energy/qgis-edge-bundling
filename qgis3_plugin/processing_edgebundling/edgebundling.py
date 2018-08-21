@@ -174,7 +174,7 @@ class Edgebundling(QgsProcessingAlgorithm):
             labels = []
             for edge in edges:
                 labels.append(edge[cluster_field])
-            feedback.pushDebugInfo(labels)
+            feedback.pushDebugInfo(cluster_field)
             for l in range(0, max(labels) + 1):
                 clusters.append(list())
             for i, label in enumerate(labels):
