@@ -92,7 +92,10 @@ class Edgebundling(QgsProcessingAlgorithm):
         https://anitagraser.com/2017/10/08/movement-data-in-gis-8-edge-bundling-for-flow-maps/
         
         Usage:
-        Pre-process your data first! Your data should only contain lines with exactly 2 nodes: an origin node and a destination node. Your data should also only contain lines with a length greater than 0 ("lines" with equal origin and destination node coordinates will cause an error).
+        Pre-process your data first! 
+        - Use only Linestrings (no Multilinestrings)
+        - Your data should only contain lines with exactly 2 nodes: an origin node and a destination node. 
+        - Your data should also only contain lines with a length greater than 0 ("lines" with equal origin and destination node coordinates will cause an error).
         Once your data is sufficiently pre-processed and fulfils all above mentioned requirements, you can either first use one of the clustering algorithms and then bundle the lines, or you can directly bundle the lines (which, on the downside, will take significantly longer). Please double check the input parameters to fit your data (e.g. the "initial step size" in the "edge bundling algorithm" dependent on the coordinate reference system of your data).
         """)
 
