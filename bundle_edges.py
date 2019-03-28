@@ -138,7 +138,7 @@ class EdgeCluster():
                 mid_I = QgsGeometry.fromPolyline([I0, I1]).centroid()
                 dist_I = I0.distance(I1)
                 if dist_I == 0.0:
-                    pass # previously: visibility = 0.0
+                    visibility1 = 0.0
                 else:
                     visibility1 = max(0, 1 - ((2 * mid_E1.distance(mid_I)) / dist_I))
                 J0 = MiscUtils.project_point_on_line(i0, edges_as_geom[j])
