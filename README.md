@@ -6,7 +6,7 @@ https://anitagraser.com/2017/10/08/movement-data-in-gis-8-edge-bundling-for-flow
 
 and
 
-Graser, A., Schmidt, J., Roth, F., & Brändle, N. (2019). Untangling origin-destination flows in geographic information systems. Information Visualization, 18(1), 153-172. doi:10.1177/1473871617738122. URL:  http://journals.sagepub.com/doi/full/10.1177/1473871617738122 (First Published November 30, 2017)
+Graser, A., Schmidt, J., Roth, F., & Brändle, N. (2019). Untangling origin-destination flows in geographic information systems. Information Visualization, 18(1), 153-172. doi:10.1177/1473871617738122. URL:  http://journals.sagepub.com/doi/full/10.1177/1473871617738122 (Article first published online: November 30, 2017)
 
 ## Installation
 
